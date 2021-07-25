@@ -28,7 +28,7 @@ public class ToDoSender {
             producer.sendTo(destination,new ToDo("workout tomorrow morning!",0));
         };
     }
-    @Scheduled(fixedRate = 500L)
+    @Scheduled(fixedRate = 50000L)
     private void sendToDos(){
         producer.sendTo(destination,new ToDo("Thinking on Spring Boot at "
                 + dateFormat.format(new Date()),i++));
